@@ -167,3 +167,22 @@ const students = await Student.find();             // all students
 const student = await Student.findOne({ name: "Alice" });
 const filtered = await Student.find({ age: { $gt: 14 } });
 ```
+
+#### ✏️ Update
+
+```bash
+await Student.updateOne({ name: "Alice" }, { grade: "11" });
+```
+
+#### ❌ Delete
+
+```bash
+await Student.deleteOne({ name: "Alice" });
+```
+
+## 📌 Quick Notes
+
+- 📌 db.collection.find() returns a cursor, use .toArray() if working outside shell.
+- ⚡ In Mongoose, all DB operations are async, so use await or .then().
+- 🏗️ Always define a Schema before creating a Model in Mongoose.
+- 🔗 Use Models to interact with collections (they wrap MongoDB collections).
