@@ -150,3 +150,20 @@ const studentSchema = new mongoose.Schema({
 // Model
 const Student = mongoose.model("Student", studentSchema);
 ```
+
+### 👉 CRUD with Mongoose
+
+#### ➕ Create
+
+```bash
+const newStudent = new Student({ name: "Alice", grade: "10", age: 15 });
+await newStudent.save();
+```
+
+#### 🔍 Read
+
+```bash
+const students = await Student.find();             // all students
+const student = await Student.findOne({ name: "Alice" });
+const filtered = await Student.find({ age: { $gt: 14 } });
+```
